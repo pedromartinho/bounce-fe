@@ -1,5 +1,7 @@
+import CheckoutPage from './pages/checkout';
+
 function App() {
-  return <div></div>;
+  return <CheckoutPage></CheckoutPage>;
 }
 
 export default App;
