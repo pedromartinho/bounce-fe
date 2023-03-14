@@ -37,36 +37,36 @@ const CheckoutPage = () => {
   if (!success){
     return (
       <form onSubmit={handleSubmit}>
-        <div className="checkout-section">
+        <div className='checkout-section'>
           <h4>Booking storage at:</h4>
           <h2>Cody's Cookie Store</h2>
           <CounterInput initialValue={numberOfBags} onChange={setNumberOfBags}/>
         </div>
         <hr/>
-        <div className="checkout-section">
+        <div className='checkout-section'>
           <h2>Personal Details</h2>
           <TextInput label='Name' placeholder='John Doe' onChange={setName} />
           <TextInput label='Email' placeholder='john@doe.com' onChange={setEmail}/>
         </div>
         <hr/>
-        <div className="checkout-section">
+        <div className='checkout-section'>
           <h2>Payment Information</h2>
           <CreditCardInput label='Card Details' placeholder='4242 4242 4242 4242' onChange={setCardNumber}/>
           {failure && <h2 onClick={() => setFailure(false)}>Your booking has failed. Please try again.</h2>}
         </div>
-        <div className="checkout-footer">
+        <div className='checkout-footer'>
           <hr/>
-          <div className="checkout-section submit-form">
+          <div className='checkout-section submit-form'>
             <span>
               <p>{`${numberOfBags} bags`}</p>
               {/* TODO: Move to util or service file */}
               <h2>{`$${Math.round(numberOfBags * BAG_PRICE * 100) / 100}`}</h2>
             </span>
-            <button className="checkout-button" type="submit">Retry</button>
+            <button className='checkout-button' type='submit'>Retry</button>
             {/* <button className="checkout-button" onClick={() => setLoading(true)}>Loading</button> */}
           </div>
         </div>
-        {loading && <Loading message="Loading..." />}
+        {loading && <Loading message='Loading...' />}
       </form>
     );
   } else {

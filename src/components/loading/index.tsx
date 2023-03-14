@@ -7,8 +7,8 @@ interface LoadingProps {
 const Loading = ({message}: LoadingProps) => {
 
   return (
-    <div className="loading-container">
-      <div className="loading-message">{message}</div>
+    <div className='loading-container'>
+      <div className='loading-message'>{message}</div>
     </div>
   );
 };

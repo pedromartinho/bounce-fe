@@ -13,13 +13,13 @@ const CreditCardInput = ({label, placeholder, onChange}: TextInputProps) => {
   useEffect(() => {
     onChange(cardNumber);
   }, [cardNumber]);
-  
+
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     // Regex to remove non-numeric characters from input
     const sanitizedValue = e.target.value.replace(/\D/g, '');
     // Insert a space after every 4 digits of the input value
     const formattedValue = sanitizedValue.replace(/(\d{4})/g, "$1 ").trim();
-    
+
     setCardNumber(formattedValue);
   };
 

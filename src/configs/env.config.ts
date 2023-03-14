@@ -1,6 +1,6 @@
 export const env = {
   node: process.env.REACT_APP_NODE_ENV || 'development',
-  
+
   app: {
     name: 'bounce-app',
     host: process.env.REACT_APP_APP_HOST || 'http://localhost',

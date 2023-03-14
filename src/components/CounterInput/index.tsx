@@ -35,9 +35,9 @@ const CounterInput = ({initialValue = 1, onChange}: CounterInputProps) => {
     <div className='counter-container'>
       <p>Number of bags</p>
       <div className='counter-buttons'>
-        <button type="button" onClick={handleDecrement} disabled={decrementDisable}>-</button>
+        <button type='button' onClick={handleDecrement} disabled={decrementDisable}>-</button>
         <p>{count}</p>
-        <button type="button" onClick={handleIncrement}>+</button>
+        <button type='button' onClick={handleIncrement}>+</button>
       </div>
     </div>
   );
