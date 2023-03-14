@@ -1,4 +1,4 @@
-.blur-message-container {
+.loading-container {
   position: absolute;
   top: 0;
   left: 0;
@@ -11,7 +11,7 @@
   backdrop-filter: blur(1px);
 }
 
-.blur-message {
+.loading-message {
   color: white;
   font-size: 24px;
   font-weight: bold;
