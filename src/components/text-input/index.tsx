@@ -1,4 +1,5 @@
 import React from 'react';
+import './text-input.css';
 
 interface TextInputProps {
   label: string;
@@ -12,9 +13,9 @@ function TextInput(props: TextInputProps) {
   };
 
   return (
-    <div>
-      <label >{props.label}</label>
-      <input type="text" id={props.label.toLowerCase()} placeholder={props.placeholder} required onChange={handleChange} />
+    <div className="input-container">
+      <label className="input-label">{props.label}</label>
+      <input className="input-field" type="text" id={props.label.toLowerCase()} placeholder={props.placeholder} required onChange={handleChange} />
     </div>
   );
 }
