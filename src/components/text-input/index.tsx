@@ -1,23 +1,26 @@
-import React from 'react';
 import './text-input.css';
 
 interface TextInputProps {
   label: string;
+  type?: 'text' | 'email | card';
   placeholder: string;
   onChange: (value: string) => void;
 }
 
-function TextInput(props: TextInputProps) {
-  const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-    props.onChange(event.target.value);
-  };
-
+const TextInput = ({label, type = 'text', placeholder, onChange}: TextInputProps) => {
   return (
     <div className="input-container">
-      <label className="input-label">{props.label}</label>
-      <input className="input-field" type="text" id={props.label.toLowerCase()} placeholder={props.placeholder} required onChange={handleChange} />
+      <label className="input-label">{label}</label>
+      <input
+        required
+        className="input-field"
+        type={type}
+        id={label.toLowerCase()}
+        placeholder={placeholder}
+        onChange={(event)=>onChange(event.target.value)}
+      />
     </div>
   );
-}
+};
 
 export default TextInput;

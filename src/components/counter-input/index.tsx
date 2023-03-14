@@ -6,21 +6,13 @@ interface CounterInputProps {
   onChange: (value: number) => void;
 }
 
-function CounterInput(props: CounterInputProps) {
-  const [count, setCount] = useState<number>(props.initialValue && props.initialValue < 1 ? props.initialValue : 1);
+const CounterInput = ({initialValue = 1, onChange}: CounterInputProps) => {
+  const [count, setCount] = useState<number>(initialValue < 1 ? initialValue : 1);
   const [decrementDisable, setDecrementDisable] = useState<boolean>(count === 1);
 
   useEffect(() => {
     handleChange();
-  });
-
-  const handleIncrement = () => {
-    setCount(count + 1);
-  };
-
-  const handleDecrement = () => {
-    setCount(count - 1);
-  };
+  }, [count]);
 
   const handleChange = () => {
     if(decrementDisable) {
@@ -28,7 +20,15 @@ function CounterInput(props: CounterInputProps) {
     } else {
       if(count === 1) setDecrementDisable(true);
     }
-    props.onChange(count);
+    onChange(count);
+  };
+
+  const handleIncrement = () => {
+    setCount(count + 1);
+  };
+
+  const handleDecrement = () => {
+    setCount(count - 1);
   };
 
   return (
@@ -41,6 +41,6 @@ function CounterInput(props: CounterInputProps) {
       </div>
     </div>
   );
-}
+};
 
 export default CounterInput;
