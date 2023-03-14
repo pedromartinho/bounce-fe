@@ -1,4 +1,4 @@
-import CheckoutPage from './pages/checkout';
+import CheckoutPage from './pages/Checkout';
 
 function App() {
   return <CheckoutPage></CheckoutPage>;

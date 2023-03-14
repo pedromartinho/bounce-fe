@@ -1,4 +1,4 @@
-import './loading.css';
+import './Loading.css';
 
 interface LoadingProps {
   message: string;

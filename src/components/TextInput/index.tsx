@@ -1,4 +1,4 @@
-import './text-input.css';
+import './TextInput.css';
 
 interface TextInputProps {
   label: string;

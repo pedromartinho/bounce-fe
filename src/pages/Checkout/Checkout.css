@@ -1,0 +1,19 @@
+.checkout-section {
+  margin: 0 32px;
+}
+
+.submit-form {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.checkout-button {
+  display: block;
+}
+
+.checkout-footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+}

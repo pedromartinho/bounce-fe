@@ -1,6 +1,6 @@
 import { AxiosResponse } from 'axios';
 import { env } from '../configs/env.config';
-import { ApiGatewayService } from './apiGateway.service';
+import { ApiGatewayService } from './apiGateway';
 
 interface IOrder {
   amount: number,

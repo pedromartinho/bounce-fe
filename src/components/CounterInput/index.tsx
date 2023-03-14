@@ -1,4 +1,4 @@
-import './counter-input.css';
+import './CounterInput.css';
 import { useState, useEffect } from 'react';
 
 interface CounterInputProps {
