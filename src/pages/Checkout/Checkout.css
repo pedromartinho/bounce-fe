@@ -1,19 +1,93 @@
+.top-section {
+  margin-top: 32px;
+}
+
 .checkout-section {
   margin: 0 32px;
+  display: flex;
+  flex-direction: column;
+  row-gap: 4px;
 }
 
 .submit-form {
+  margin: 0 32px;
+  width: 100%;
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
 
-.checkout-button {
+.submit-button {
   display: block;
+  background-color: #649DFF;
+  border: none;
+  color: black;
+  width: 120px;
+  height: 40px;
+  border-radius: 3px;
+  font-size: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.submit-button:disabled {
+  opacity: 0.5;
 }
 
 .checkout-footer {
-  position: absolute;
-  bottom: 0;
+  border-top: 1px solid black;
   width: 100%;
+  position: fixed;
+  bottom: 0;
+  height: 100px;
+  display: flex;
+  justify-content: center;;
+}
+
+.counter-container {
+  margin-top: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.error-message {
+  font-size: 20px;
+  margin-top: 40px;
+}
+
+.sub-title {
+  font-size: 16px;
+  margin: 4px 0;
+}
+
+.title {
+  font-size: 24px;
+  font-weight: bold;
+  margin: 4px 0;
+}
+
+.section-title {
+  font-size: 20px;
+  margin: 4px 0;
+}
+
+.sub-text {
+  font-size: 14px;
+  margin: 4px 0;
+}
+
+.submit-action {
+  background-color: #649DFF;
+  border: none;
+  color: black;
+  width: 30px;
+  height: 30px;
+  border-radius: 3px;
+  font-size: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
