@@ -2,43 +2,39 @@ import './CounterInput.css';
 import { useState, useEffect } from 'react';
 
 interface CounterInputProps {
-  initialValue?: number;
-  onChange: (value: number) => void;
+  value: number;
+  setValue: (value: number) => void;
 }
 
-const CounterInput = ({initialValue = 1, onChange}: CounterInputProps) => {
-  const [count, setCount] = useState<number>(initialValue < 1 ? initialValue : 1);
-  const [decrementDisable, setDecrementDisable] = useState<boolean>(count === 1);
+const CounterInput = ({value = 1, setValue}: CounterInputProps) => {
+  const [decrementDisable, setDecrementDisable] = useState<boolean>(value === 1);
 
   useEffect(() => {
     handleChange();
-  }, [count]);
+  }, [value]);
 
   const handleChange = () => {
     if(decrementDisable) {
-      if (count > 1) setDecrementDisable(false);
+      if (value > 1) setDecrementDisable(false);
     } else {
-      if(count === 1) setDecrementDisable(true);
+      if(value === 1) setDecrementDisable(true);
     }
-    onChange(count);
   };
 
   const handleIncrement = () => {
-    setCount(count + 1);
+    setValue(value + 1);
+
   };
 
   const handleDecrement = () => {
-    setCount(count - 1);
+    setValue(value - 1);
   };
 
   return (
-    <div className='counter-container'>
-      <p>Number of bags</p>
-      <div className='counter-buttons'>
-        <button type='button' onClick={handleDecrement} disabled={decrementDisable}>-</button>
-        <p>{count}</p>
-        <button type='button' onClick={handleIncrement}>+</button>
-      </div>
+    <div className='counter-buttons-section'>
+      <button className='counter-action' type='button' onClick={handleDecrement} disabled={decrementDisable}>-</button>
+      <p>{value}</p>
+      <button className='counter-action' type='button' onClick={handleIncrement}>+</button>
     </div>
   );
 };
