@@ -1,18 +1,15 @@
 import './CreditCardInput.css';
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 
 interface TextInputProps {
+  initialValue: string;
   label: string;
   placeholder: string;
   onChange: (value: string) => void;
 }
 
-const CreditCardInput = ({label, placeholder, onChange}: TextInputProps) => {
-  const [cardNumber, setCardNumber] = useState('');
-
-  useEffect(() => {
-    onChange(cardNumber);
-  }, [cardNumber]);
+const CreditCardInput = ({initialValue, label, placeholder, onChange}: TextInputProps) => {
+  const [cardNumber, setCardNumber] = useState(initialValue || '');
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     // Regex to remove non-numeric characters from input
@@ -21,6 +18,7 @@ const CreditCardInput = ({label, placeholder, onChange}: TextInputProps) => {
     const formattedValue = sanitizedValue.replace(/(\d{4})/g, "$1 ").trim();
 
     setCardNumber(formattedValue);
+    onChange(formattedValue);
   };
 
   return (
