@@ -1,4 +1,4 @@
-import './Loading.css';
+import './OverlayMessage.css';
 
 interface OverlayMessageProps {
   message: string;

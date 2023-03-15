@@ -24,6 +24,17 @@ const CheckoutPage = () => {
   const [validForm, setValidForm] = useState(false);
 
   useEffect(() => {
+    loadStoreInfo();
+    loadLocalStorageValues();
+    setValidForm(isFormValid());
+  }, []);
+
+  useEffect(() => {
+    setLocalStorageValues();
+    setValidForm(isFormValid());
+  }, [name, email, cardNumber, numberOfBags]);
+
+  const loadStoreInfo = () => {
     const storeService = new StoreService();
     storeService.getStore(1).then((data) => {
       setUnitPrice(data.unitPrice);
@@ -31,6 +42,9 @@ const CheckoutPage = () => {
     })
       .catch(() => setFailure(true))
       .finally(() => setLoading(false));
+  };
+
+  const loadLocalStorageValues = () => {
     const savedName = localStorage.getItem('name');
     if(savedName) setName(savedName);
     const savedEmail = localStorage.getItem('email');
@@ -39,22 +53,20 @@ const CheckoutPage = () => {
     if(cardNumber) setCardNumber(cardNumber);
     const numberOfBags = localStorage.getItem('numberOfBags');
     if(numberOfBags && Number(numberOfBags) !== 1) setNumberOfBags(Number(numberOfBags));
-    setValidForm(isFormValid());
-  }, []);
+  };
 
-  useEffect(() => {
+  const setLocalStorageValues = () => {
     localStorage.setItem('name', name);
     localStorage.setItem('email', email);
     localStorage.setItem('cardNumber', cardNumber);
     localStorage.setItem('numberOfBags', numberOfBags.toString());
-    setValidForm(isFormValid());
-  }, [name, email, cardNumber, numberOfBags]);
+  };
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    const orderService = new OrderService();
     setLoading(true);
     setFailure(false);
+    const orderService = new OrderService();
     orderService.create({
       numberOfBags,
       unitPrice: Math.round(numberOfBags * BAG_PRICE * 100) / 100,
@@ -97,7 +109,7 @@ const CheckoutPage = () => {
         <hr/>
         <div className='checkout-section'>
           <p className='section-title'>Payment Information</p>
-          <CreditCardInput initialValue={cardNumber} label='Card Details' placeholder='4242 4242 4242 4242' onChange={setCardNumber}/>
+          <CreditCardInput value={cardNumber} label='Card Details' placeholder='4242 4242 4242 4242' setValue={setCardNumber}/>
           {failure && <p className='error-message'>Your booking has failed.<br/> Please try again.</p>}
         </div>
         <div className='checkout-footer'>

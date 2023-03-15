@@ -1,24 +1,20 @@
 import './CreditCardInput.css';
-import React, { useState } from 'react';
+import React from 'react';
 
 interface TextInputProps {
-  initialValue: string;
+  value: string;
   label: string;
   placeholder: string;
-  onChange: (value: string) => void;
+  setValue: (value: string) => void;
 }
 
-const CreditCardInput = ({initialValue, label, placeholder, onChange}: TextInputProps) => {
-  const [cardNumber, setCardNumber] = useState(initialValue || '');
-
+const CreditCardInput = ({value, label, placeholder,  setValue}: TextInputProps) => {
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     // Regex to remove non-numeric characters from input
     const sanitizedValue = e.target.value.replace(/\D/g, '');
     // Insert a space after every 4 digits of the input value
     const formattedValue = sanitizedValue.replace(/(\d{4})/g, "$1 ").trim();
-
-    setCardNumber(formattedValue);
-    onChange(formattedValue);
+    setValue(formattedValue);
   };
 
   return (
@@ -26,7 +22,7 @@ const CreditCardInput = ({initialValue, label, placeholder, onChange}: TextInput
       <label className='input-label'>{label}</label>
       <input
         required
-        value={cardNumber}
+        value={value}
         className='input-field'
         type='text'
         id={label.toLowerCase()}
