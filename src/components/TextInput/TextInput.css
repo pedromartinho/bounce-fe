@@ -1,9 +1,19 @@
 .input-container {
-  /* display: block; */
+  row-gap: 4px;
 }
+
 .input-label {
   display: block;
+  font-weight: 300;
 }
+
 .input-field {
   display: block;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  border-radius: 5px;
+  font-size: 16px;
+  font-weight: 200;
+  padding: 6px 10px;
+  margin-bottom: 16px;
+  width: 240px;
 }
