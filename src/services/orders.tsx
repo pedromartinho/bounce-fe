@@ -3,11 +3,11 @@ import { env } from '../configs/env.config';
 import { ApiGatewayService } from './apiGateway';
 
 interface IOrder {
-  amount: number,
+  numberOfBags: number,
   unitPrice: number,
   name: string,
   email: string,
-  cardNumber: string,
+  creditCardNumber: string,
 }
 
 /**
@@ -24,11 +24,13 @@ export class OrderService {
   }
 
   /**
-   * Perform a GET request
+   * Perform a create order
    * @param {IOrder} order - order
-   * @returns {Promise<AxiosResponse>} - Request response
+   * @returns {Promise<string>} - order id
    */
-  public async create(orderPayload: IOrder): Promise<AxiosResponse> {
-    return await this.apiGateway.post(this.ordersEndpoint, orderPayload);
+  public async create(orderPayload: IOrder): Promise<string> {
+    const {data} = await this.apiGateway.post(this.ordersEndpoint, orderPayload);
+
+    return data.id;
   }
 }
