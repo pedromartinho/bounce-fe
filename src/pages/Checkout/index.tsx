@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from 'react';
+import React, {useState, useEffect, useRef} from 'react';
 import CounterInput from '../../components/CounterInput';
 import CreditCardInput from '../../components/CreditCardInput';
 import Loading from '../../components/Loading';
@@ -22,9 +22,14 @@ const CheckoutPage = () => {
   const [cardNumber, setCardNumber] = useState('');
   const [numberOfBags, setNumberOfBags] = useState(1);
   const [validForm, setValidForm] = useState(false);
+  const shouldFetch = useRef(true);
 
   useEffect(() => {
-    loadStoreInfo();
+    if(shouldFetch.current) {
+      shouldFetch.current = false;
+      console.log('SHOULD BE CALLED ONCE');
+      loadStoreInfo();
+    }
     loadLocalStorageValues();
     setValidForm(isFormValid());
   }, []);
