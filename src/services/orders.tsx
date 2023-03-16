@@ -23,7 +23,7 @@ export class OrderService {
   }
 
   /**
-   * Perform a create order
+   * Perform create order
    * @param {IOrder} order - order
    * @returns {Promise<string>} - order id
    */

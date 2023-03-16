@@ -6,7 +6,7 @@ interface IStore {
   unitPrice: number,
 }
 /**
- * A service responsible for handling store requests
+ * Service responsible for handling store requests
  * @class StoreService
  */
 export class StoreService {

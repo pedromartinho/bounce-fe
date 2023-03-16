@@ -1,9 +1,14 @@
-.input-container {
-  /* display: block; */
-}
-.input-label {
+.card-input-label {
   display: block;
+  font-weight: 300;
 }
-.input-field {
+
+.card-input-field {
   display: block;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  border-radius: 5px;
+  font-size: 16px;
+  padding: 6px 10px;
+  margin-bottom: 16px;
+  width: 240px;
 }

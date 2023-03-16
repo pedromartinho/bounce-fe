@@ -18,12 +18,12 @@ const CreditCardInput = ({value, label, placeholder,  setValue}: TextInputProps)
   };
 
   return (
-    <div className='input-container'>
-      <label className='input-label'>{label}</label>
+    <div>
+      <label className='card-input-label'>{label}</label>
       <input
         required
         value={value}
-        className='input-field'
+        className='card-input-field'
         type='text'
         id={label.toLowerCase()}
         placeholder={placeholder}

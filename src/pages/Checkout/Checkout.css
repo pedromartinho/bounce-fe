@@ -3,7 +3,7 @@
 }
 
 .checkout-section {
-  margin: 0 32px;
+  margin: 0 36px;
   display: flex;
   flex-direction: column;
   row-gap: 4px;
@@ -71,7 +71,7 @@
 
 .section-title {
   font-size: 20px;
-  margin: 4px 0;
+  margin: 8px 0;
 }
 
 .sub-text {

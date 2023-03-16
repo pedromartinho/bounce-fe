@@ -10,7 +10,7 @@ interface TextInputProps {
 
 const TextInput = ({initialValue, label, type = 'text', placeholder, onChange}: TextInputProps) => {
   return (
-    <div className='input-container'>
+    <div>
       <label className='input-label'>{label}</label>
       <input
         required

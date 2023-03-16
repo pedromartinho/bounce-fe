@@ -6,10 +6,6 @@ describe('CreditCardInput', () => {
   const label = 'Credit Card Number';
   const placeholder = '1234 5678 9012 3456';
 
-  beforeEach(() => {
-    setValue.mockClear();
-  });
-
   it('renders input field with label and placeholder', () => {
     render(<CreditCardInput value='' label={label} placeholder={placeholder} setValue={setValue} />);
 
