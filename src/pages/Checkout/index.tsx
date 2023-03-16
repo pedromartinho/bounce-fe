@@ -111,7 +111,7 @@ const CheckoutPage = () => {
           <TextInput initialValue={email} label='Email' type='email' placeholder='john@doe.com' onChange={setEmail}/>
         </div>
         <hr/>
-        <div className='checkout-section'>
+        <div id='card-number-section' className='checkout-section'>
           <p className='section-title'>Payment Information</p>
           <CreditCardInput value={cardNumber} label='Card Details' placeholder='4242 4242 4242 4242' setValue={setCardNumber}/>
           {failure && <p className='error-message'>Your booking has failed.<br/> Please try again.</p>}
