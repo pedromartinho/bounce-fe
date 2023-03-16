@@ -63,7 +63,7 @@ describe('TextInput component', () => {
         onChange={mockOnChange}
       />
     );
-  
+
     const inputElement = screen.getByPlaceholderText(placeholder);
     expect((inputElement as any).type as any).toBe(type);
   });
