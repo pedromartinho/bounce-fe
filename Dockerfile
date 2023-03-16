@@ -20,10 +20,7 @@ RUN npm run build
 ENV NODE_ENV=production
 
 # Expose port 3000
-EXPOSE 3000:3000
-
-# # Start the application
-# CMD ["npm", "start"]
+EXPOSE 3000
 
 # Run application.
 ENTRYPOINT ["npm","run"]
