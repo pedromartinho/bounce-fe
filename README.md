@@ -35,24 +35,14 @@ make linter
 
 Here are the final experience you should see.
 
-&nbsp;
-
 ### Fill the form ✍️
-
-&nbsp;
 
 
 <img src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExZDM4MmUzMjRjODMxMWFlNmMzZDljZGFkMzUzNTU0NDE4YmEwODhmZiZjdD1n/fmXO9khl3h7tZdjzqE/giphy.gif" width="800" />
 
-&nbsp;
-
 ### Submit form ✅
 
-&nbsp;
-
 <img src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExOGI1YjEyNGM4ZDdjOTUyMmY3NTRkNTlhZmYzMWQ4MDNlYjhkYmE0OSZjdD1n/FzJjXW4tj3YjWuFWQi/giphy.gif" width="800" />
-
-&nbsp;
 
 ## 💭 Structure and approach
 
