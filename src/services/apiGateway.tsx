@@ -26,7 +26,6 @@ export class ApiGatewayService {
    * @param {string} url - Url to consider
    * @returns {Promise<AxiosResponse>} - Request response
    */
-  // eslint-disable-next-line
   public async get(url: string): Promise<AxiosResponse> {
     return await this.request(url, HttpRequestMethodEnum.GET);
   }
@@ -37,7 +36,6 @@ export class ApiGatewayService {
    * @param {any} [data] - payload to consider in request
    * @returns {Promise<AxiosResponse<any>>} Request response
    */
-  // eslint-disable-next-line
   public async post(url: string, data?: any): Promise<AxiosResponse> {
     return await this.request(url, HttpRequestMethodEnum.POST, data);
   }
@@ -49,7 +47,6 @@ export class ApiGatewayService {
    * @param {any} data - The data to send in the request body
    * @returns {Promise<AxiosResponse>} - Request response
    */
-  // eslint-disable-next-line
   private async request(url: string, method: HttpRequestMethodEnum, data?: any): Promise<AxiosResponse> {
     return await this.client.request({ url, method, data, timeout: 1000 * this.timeoutSeconds });
   }
