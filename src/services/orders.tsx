@@ -1,4 +1,3 @@
-import { AxiosResponse } from 'axios';
 import { env } from '../configs/env.config';
 import { ApiGatewayService } from './apiGateway';
 
