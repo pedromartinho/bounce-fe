@@ -27,7 +27,6 @@ const CheckoutPage = () => {
   useEffect(() => {
     if(shouldFetch.current) {
       shouldFetch.current = false;
-      console.log('SHOULD BE CALLED ONCE');
       loadStoreInfo();
     }
     loadLocalStorageValues();
