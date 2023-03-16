@@ -1,7 +1,7 @@
 import React, {useState, useEffect, useRef} from 'react';
 import CounterInput from '../../components/CounterInput';
 import CreditCardInput from '../../components/CreditCardInput';
-import Loading from '../../components/Loading2';
+import Loading from '../../components/Loading';
 import OverlayMessage from '../../components/OverlayMessage';
 import TextInput from '../../components/TextInput';
 import { OrderService } from '../../services/orders';
